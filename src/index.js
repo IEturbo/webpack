@@ -1,7 +1,18 @@
 import _ from 'lodash';
-function component(){
-    var el = document.createElement('div');
-    el.innerHTML = _.join(['hello','webpack'],' ');
-    return el;
-}
-document.body.appendChild(component());
+import printMe from './print.js';
+
+  function component() {
+    var element = document.createElement('div');
+    var btn = document.createElement('button');
+
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+   btn.innerHTML = 'Click me and check the console!';
+   btn.onclick = printMe;
+
+   element.appendChild(btn);
+
+    return element;
+  }
+
+  document.body.appendChild(component());
